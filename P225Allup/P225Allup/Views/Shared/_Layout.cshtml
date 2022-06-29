@@ -287,7 +287,7 @@
                                                 </div>
                                                 <div class="shipping price_inline">
                                                     <span class="label">Shipping</span>
-                                                    <span class="value">€7.00</span>
+                                                    <span class="value">€@(basketVMs.Count==0 ?  0 :  7)</span>
                                                 </div>
                                                 <div class="tax price_inline">
                                                     <span class="label">Taxes</span>
@@ -296,7 +296,7 @@
                                             </div>
                                             <div class="cart-total price_inline">
                                                 <span class="label">Total</span>
-                                                <span class="value">€@(basketVMs.Sum(e => e.Price * e.Count)+7)</span>
+                                                <span class="value">€@(basketVMs.Count==0 ?  0 : (basketVMs.Sum(e => e.Price * e.Count) + 7))</span>
                                             </div>
                                         </div> <!-- price content -->
                                         <div class="checkout text-center">
